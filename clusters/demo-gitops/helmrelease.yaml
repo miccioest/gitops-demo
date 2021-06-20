@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: <name|path>
+      chart: podinfo
       version: '4.0.x'
       sourceRef:
         kind: HelmRepository
