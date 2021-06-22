@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: elasticsearch
+  namespace: elastic
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: elasticsearch
+      version: '8.0.0-SNAPSHOT'
+      sourceRef:
+        kind: HelmRepository
+        name: elastic
+        namespace: flux-system
+      interval: 1m
+  values:
