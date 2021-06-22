@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: elasticsearch
-      version: '8.0.0-SNAPSHOT'
+      version: '7.13.x'
       sourceRef:
         kind: HelmRepository
         name: elastic
