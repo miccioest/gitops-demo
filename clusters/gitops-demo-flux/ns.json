@@ -1,0 +1,67 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{\"kustomize.toolkit.fluxcd.io/checksum\":\"09199dc56c45feed56301cee0a1dd4d7f18a901b\"},\"labels\":{\"app.kubernetes.io/instance\":\"flux-system\",\"app.kubernetes.io/part-of\":\"flux\",\"app.kubernetes.io/version\":\"v0.15.3\",\"kustomize.toolkit.fluxcd.io/name\":\"flux-system\",\"kustomize.toolkit.fluxcd.io/namespace\":\"flux-system\"},\"name\":\"flux-system\"}}\n",
+            "kustomize.toolkit.fluxcd.io/checksum": "09199dc56c45feed56301cee0a1dd4d7f18a901b"
+        },
+        "creationTimestamp": "2021-06-23T19:10:06Z",
+        "deletionTimestamp": "2021-06-23T19:37:40Z",
+        "labels": {
+            "app.kubernetes.io/instance": "flux-system",
+            "app.kubernetes.io/part-of": "flux",
+            "app.kubernetes.io/version": "v0.15.3",
+            "kustomize.toolkit.fluxcd.io/name": "flux-system",
+            "kustomize.toolkit.fluxcd.io/namespace": "flux-system"
+        },
+        "name": "flux-system",
+        "resourceVersion": "15052",
+        "selfLink": "/api/v1/namespaces/flux-system",
+        "uid": "779421bd-8306-4d86-98f7-eea9bda82be8"
+    },
+    "spec": {
+        "finalizers": [
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2021-06-23T19:37:45Z",
+                "message": "Discovery failed for some groups, 1 failing: unable to retrieve the complete list of server APIs: metrics.k8s.io/v1beta1: the server is currently unable to handle the request",
+                "reason": "DiscoveryFailed",
+                "status": "True",
+                "type": "NamespaceDeletionDiscoveryFailure"
+            },
+            {
+                "lastTransitionTime": "2021-06-23T19:37:51Z",
+                "message": "All legacy kube types successfully parsed",
+                "reason": "ParsedGroupVersions",
+                "status": "False",
+                "type": "NamespaceDeletionGroupVersionParsingFailure"
+            },
+            {
+                "lastTransitionTime": "2021-06-23T19:37:51Z",
+                "message": "All content successfully deleted, may be waiting on finalization",
+                "reason": "ContentDeleted",
+                "status": "False",
+                "type": "NamespaceDeletionContentFailure"
+            },
+            {
+                "lastTransitionTime": "2021-06-23T19:37:51Z",
+                "message": "Some resources are remaining: gitrepositories.source.toolkit.fluxcd.io has 1 resource instances, helmcharts.source.toolkit.fluxcd.io has 5 resource instances, helmrepositories.source.toolkit.fluxcd.io has 3 resource instances, kustomizations.kustomize.toolkit.fluxcd.io has 1 resource instances",
+                "reason": "SomeResourcesRemain",
+                "status": "True",
+                "type": "NamespaceContentRemaining"
+            },
+            {
+                "lastTransitionTime": "2021-06-23T19:37:51Z",
+                "message": "Some content in the namespace has finalizers remaining: finalizers.fluxcd.io in 10 resource instances",
+                "reason": "SomeFinalizersRemain",
+                "status": "True",
+                "type": "NamespaceFinalizersRemaining"
+            }
+        ],
+        "phase": "Terminating"
+    }
+}
