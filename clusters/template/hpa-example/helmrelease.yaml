@@ -8,15 +8,9 @@ spec:
   chart:
     spec:
       chart: ./hpa-example
-      # version: '3.4.0'
       sourceRef:
         kind: GitRepository
         name: charts
         namespace: flux-system
       interval: 1m
   values:
-    autoscaling:
-      enabled: true
-      minReplicas: 1
-      maxReplicas: 10
-      targetCPUUtilizationPercentage: 50
