@@ -15,3 +15,8 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
+    autoscaling:
+      enabled: true
+      minReplicas: 1
+      maxReplicas: 10
+      targetCPUUtilizationPercentage: 50
