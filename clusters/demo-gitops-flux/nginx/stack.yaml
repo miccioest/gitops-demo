@@ -23,6 +23,12 @@ spec:
         image: docker.io/nginx
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            memory: 90Mi
+          requests:
+            cpu: 50m
+            memory: 90Mi
 ---
 apiVersion: v1
 kind: Service
