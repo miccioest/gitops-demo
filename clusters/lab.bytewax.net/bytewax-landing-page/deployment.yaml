@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  labels:
+    app: landing-page
+  name: landing-page
+  namespace: bytewax-landing-page
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: landing-page
+  template:
+    metadata:
+      labels:
+        app: landing-page
+    spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - preference:
+              matchExpressions:
+              - key: bytewax.io/instancegroup
+                operator: In
+                values:
+                - core
+            weight: 100
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchLabels:
+                  app: landing-page
+              topologyKey: kubernetes.io/hostname
+            weight: 10
+      containers:
+      - image: 443066169751.dkr.ecr.us-west-2.amazonaws.com/landing-page:3d8727dbb7da95a34d5f929062e06c8c053969b3
+        imagePullPolicy: IfNotPresent
+        name: landing-page
+        ports:
+        - containerPort: 4000
+          protocol: TCP
+      tolerations:
+      - effect: NoSchedule
+        key: dedicated
+        operator: Equal
+        value: core
