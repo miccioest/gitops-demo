@@ -8,7 +8,7 @@ metadata:
   name: landing-page
   namespace: bytewax-landing-page
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: landing-page
