@@ -36,7 +36,10 @@ spec:
               topologyKey: kubernetes.io/hostname
             weight: 10
       containers:
-      - image: 443066169751.dkr.ecr.us-west-2.amazonaws.com/landing-page:bdebf1aa03698a0c89efd11c660f2505225f2c14 # 443066169751.dkr.ecr.us-west-2.amazonaws.com/landing-page:3d8727dbb7da95a34d5f929062e06c8c053969b3
+      # old
+      # - image: 443066169751.dkr.ecr.us-west-2.amazonaws.com/landing-page:bdebf1aa03698a0c89efd11c660f2505225f2c14 
+      # latest
+      - image: 443066169751.dkr.ecr.us-west-2.amazonaws.com/landing-page:3d8727dbb7da95a34d5f929062e06c8c053969b3
         imagePullPolicy: IfNotPresent
         name: landing-page
         ports:
