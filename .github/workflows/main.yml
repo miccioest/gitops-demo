@@ -1,16 +1,20 @@
-name: Landing Page Deployment
-
+name: Manually triggered workflow
 on:
   workflow_dispatch:
     inputs:
-      environment:
-        description: 'Environment'
+      name:
+        description: 'Person to greet'
         required: true
-        default: 'Lab'
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
+        required: false
+        default: 'The Octoverse'
 
 jobs:
-  deploy_landing:
+  say_hello:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "deployment on ${{ github.event.inputs.environment }}"
+          echo "Hello ${{ github.event.inputs.name }}!"
+          echo "- in ${{ github.event.inputs.home }}!"
