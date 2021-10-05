@@ -1,0 +1,16 @@
+name: Landing Page Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment'
+        required: true
+        default: 'Lab'
+
+jobs:
+  deploy_landing:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "deployment on ${{ github.event.inputs.environment }}"
